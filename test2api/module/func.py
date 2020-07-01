@@ -1,4 +1,4 @@
-from linebot.models import MessageEvent ,TextSendMessage , ImageSendMessage,StickerSendMessage,LocationSendMessage,QuickReply,QuickReplyButton,MessageAction,TemplateSendMessage,ButtonsTemplate,MessageTemplateAction, URITemplateAction, PostbackTemplateAction,ImagemapSendMessage,BaseSize,MessageImagemapAction,ImagemapArea,URIImagemapAction,CarouselColumn,CarouselTemplate,ImageCarouselColumn,ImageCarouselTemplate,BubbleContainer,BoxComponent,ImageComponent,IconComponent,TextComponent,SeparatorComponent,FlexSendMessage
+from linebot.models import MessageEvent ,TextSendMessage , ImageSendMessage,StickerSendMessage,LocationSendMessage,QuickReply,QuickReplyButton,MessageAction,TemplateSendMessage,ButtonsTemplate,MessageTemplateAction, URITemplateAction, PostbackTemplateAction,ImagemapSendMessage,BaseSize,MessageImagemapAction,ImagemapArea,URIImagemapAction,CarouselColumn,CarouselTemplate,ImageCarouselColumn,ImageCarouselTemplate,BubbleContainer, ImageComponent, BoxComponent, TextComponent, IconComponent, ButtonComponent, SeparatorComponent, FlexSendMessage, URIAction
 from linebot import  LineBotApi,WebhookParser
 from linebot.exceptions import InvalidSignatureError ,LineBotApiError
 from django.shortcuts import render
@@ -179,62 +179,57 @@ def sendCarousel(event):
 			template=CarouselTemplate(
 				columns=[
 					CarouselColumn(
-						thumbnail_image_url='https://lh5.googleusercontent.com/p/AF1QipNnQOa2A8RTG1GJn8iYAwAVrZt0lcQofOFoUGdc=w928-h520-n-k-no',
-						title='大溪老街',
-						text='請點選欲了解的項目：',
+						thumbnail_image_url='https://i.imgur.com/nw20uTZ.jpg',
+						title='花藝課程資訊',
+						text='往後滑動→\n觀看歷史活動紀錄！',
 						actions=[
 							URITemplateAction(
-								label='維基百科',
-								uri='https://zh.wikipedia.org/zh-tw/%E5%A4%A7%E6%BA%AA%E8%80%81%E8%A1%97'
-							),
-							URITemplateAction(
-								label='搜尋結果',
-								uri='https://www.google.com/search?q=大溪老街&stick=H4sIAAAAAAAAAONgFuLUz9U3MC5Jyi5S4gYxDQ0LTS1KDLUUs5Ot9HPykxNLMvPz4AyrxJKSosRkELMYAM4Ux8U9AAAA&ved=0CBMQ4mhqFwoTCOD8lv2DmuoCFQAA'
+								label='前往官方網站查看更多',
+								uri='https://www.facebook.com/%E7%B4%AB%E7%9B%92%E5%AD%90%E8%8A%B1%E7%A6%AE%E8%A8%AD%E8%A8%88-193614007383467/'
 							)
 						]
 					),
 					CarouselColumn(
-						thumbnail_image_url='https://lh5.googleusercontent.com/proxy/DmoAcQkorYFiFBWYpjcZ0ojdflqMarZY22xByDVYAlq0x4YzDY7kFZuBObFN509dUKEzLNQCWkB_vuLoXXJSZnI9PwJbN8lOnN64WvO4-BvtUYiAwIheY1getH0iX-2TZa6G_qowRkch56Ysf6rJaqL3YJyx9358IhyXWTJA912A=w928-h520-n-k-no',
-						title='石門水壩',
-						text='請點選欲了解的項目：',
+						thumbnail_image_url='https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/83595928_2629590977119079_4877398284773097472_n.jpg?_nc_cat=100&_nc_sid=0debeb&_nc_ohc=3ZkXpMXCLeAAX_WJgzD&_nc_ht=scontent.ftpe4-2.fna&oh=0e4e6cc0085c0eb7b98588cb347d0387&oe=5F20CBB7',
+						title='2020年 年花課程',
+						text='1/21~1/22',
 						actions=[
 							URITemplateAction(
-								label='維基百科',
-								uri='https://zh.wikipedia.org/zh-tw/%E7%9F%B3%E9%96%80%E6%B0%B4%E5%BA%AB_(%E8%87%BA%E7%81%A3)'
-							),
-							URITemplateAction(
-								label='搜尋結果',
-								uri='https://www.google.com/search?sxsrf=ALeKk00xMaGNpe6vQ5UveW8naztqMuG45Q%3A1592988817966&ei=kRTzXuSxOuLEmAXt7b6ICg&q=%E7%9F%B3%E9%96%80%E6%B0%B4%E5%A3%A9&oq=%E7%9F%B3%E9%96%80%E6%B0%B4%E5%A3%A9&gs_lcp=ChNtb2JpbGUtZ3dzLXdpei1zZXJwEAwyBAgjECcyBQgAEM0CMgUIABDNAlAAWABgnxJoAHAAeACAAcYBiAHGAZIBAzAuMZgBAA&sclient=mobile-gws-wiz-serp'
+								label='前往觀看活動相片',
+								uri='https://www.facebook.com/193614007383467/photos/a.2629573170454193/2629590973785746'
 							)
 						]
 					),
 					CarouselColumn(
-						thumbnail_image_url='https://lh5.googleusercontent.com/p/AF1QipM9Qi7wsPxWLoP_Xb4kgGdNH5edl98RKB3rCvXt=w928-h520-n-k-no',
-						title='慈湖陵寢',
-						text='請點選欲了解的項目：',
+						thumbnail_image_url='https://scontent.ftpe4-1.fna.fbcdn.net/v/t1.0-9/28378946_1585021301576057_2777316159554010739_n.jpg?_nc_cat=108&_nc_sid=cdbe9c&_nc_ohc=5f9Skl3x7YMAX8A-4n1&_nc_ht=scontent.ftpe4-1.fna&oh=f015a5cc57f8a905b019f54577b91d8b&oe=5F2027D1',
+						title='2018年 樹屋年花單堂課',
+						text='2/11下午場，2/12下午&晚上場',
 						actions=[
 							URITemplateAction(
-								label='維基百科',
-								uri='https://zh.wikipedia.org/zh-tw/%E6%85%88%E6%B9%96%E9%99%B5%E5%AF%A2'
-							),
-							URITemplateAction(
-								label='搜尋結果',
-								uri='https://www.google.com/search?sxsrf=ALeKk00yTMqLvInr27tczdLueA-_u1-Onw%3A1592988977360&ei=MRXzXofHFY2Lr7wPlImx0AM&q=%E6%85%88%E6%B9%96%E9%99%B5%E5%AF%9D&oq=%E6%85%88%E6%B9%96&gs_lcp=ChNtb2JpbGUtZ3dzLXdpei1zZXJwEAEYATICCAAyAggAMgQIABBDMgIIADICCAAyAggAMgQIABBDMgIIADoECAAQRzoECCMQJzoHCAAQsQMQQzoFCAAQsQM6BwgjEOoCECdQoQNYoBlgkCJoAXABeACAAbcBiAHGApIBAzIuMZgBAKABAbABDw&sclient=mobile-gws-wiz-serp'
+								label='前往觀看活動相片',
+								uri='https://www.facebook.com/media/set/?vanity=193614007383467&set=a.1585021004909420'
 							)
 						]
 					),
 					CarouselColumn(
-						thumbnail_image_url='https://lh5.googleusercontent.com/p/AF1QipMhtBz-0MeLy0NTknkuix014hdNaCpQALVS0OR4=w408-h306-k-no',
-						title='大溪花海',
-						text='請點選欲了解的項目：',
+						thumbnail_image_url='https://scontent.ftpe4-1.fna.fbcdn.net/v/t1.0-9/25348528_1517277188350469_4496425193584292466_n.jpg?_nc_cat=107&_nc_sid=0debeb&_nc_ohc=yDGyQom23f0AX_eOQZF&_nc_ht=scontent.ftpe4-1.fna&oh=d3c9bbe185351a0d3450e479f6a71ef2&oe=5F23B7E4',
+						title='2017年 聖誕節單堂手作課',
+						text='12/16',
 						actions=[
 							URITemplateAction(
-								label='官方網站',
-								uri='http://www.tasheeblmn.com.tw/'
-							),
+								label='前往觀看活動相片',
+								uri='https://www.facebook.com/media/set/?vanity=193614007383467&set=a.1517274651684056'
+							)
+						]
+					),
+					CarouselColumn(
+						thumbnail_image_url='https://scontent.ftpe4-2.fna.fbcdn.net/v/t31.0-8/17310385_1267893303288860_5561151591450420887_o.jpg?_nc_cat=104&_nc_sid=cdbe9c&_nc_ohc=ave_PC7CEy8AX8iNtNl&_nc_ht=scontent.ftpe4-2.fna&oh=134321caba072597e606abd5b539b93e&oe=5F227A4D',
+						title='2017年 年花課',
+						text='1/25',
+						actions=[
 							URITemplateAction(
-								label='搜尋結果',
-								uri='https://www.google.com/search?q=%E5%A4%A7%E6%BA%AA%E8%8A%B1%E6%B5%B7&rlz=1C5CHFA_enTW898TW898&oq=%E5%A4%A7%E6%BA%AA%E8%8A%B1%E6%B5%B7&aqs=chrome.0.69i59j0l5j69i61l2.2788j0j4&sourceid=chrome&ie=UTF-8'
+								label='前往觀看活動相片',
+								uri='https://www.facebook.com/193614007383467/photos/a.1267892846622239/1267895486621975'
 							)
 						]
 					)
@@ -291,11 +286,11 @@ def sendFlex(event):
             header=BoxComponent(
                 layout='vertical',
                 contents=[
-                    TextComponent(text='第17組飲料店', weight='bold', size='xxl'),
+                    TextComponent(text='紫盒子花禮設計', color='#381E4C', weight='bold', size='xxl'),
                 ]
             ),
             hero=ImageComponent(
-                url='https://i.imgur.com/3sBRh08.jpg',
+                url='https://scontent.ftpe4-2.fna.fbcdn.net/v/t31.0-8/13055946_999120876832772_2044881262332591773_o.jpg?_nc_cat=100&_nc_sid=e3f864&_nc_ohc=gCBdBiAdm6UAX9JxTw0&_nc_ht=scontent.ftpe4-2.fna&oh=e9a94af719cb33c68959d34b6f4590a1&oe=5F20EAC2',
                 size='full',
                 aspect_ratio='792:555',
                 aspect_mode='cover',
@@ -303,17 +298,6 @@ def sendFlex(event):
             body=BoxComponent(
                 layout='vertical',
                 contents=[
-                    TextComponent(text='評價', size='md'),
-                    BoxComponent(
-                        layout='baseline',
-                        margin='md',
-                        contents=[
-                            IconComponent(size='lg', url='https://i.imgur.com/GsWCrIx.png'),
-                            TextComponent(text='25', size='sm', color='#999999', flex=0),
-                            IconComponent(size='lg', url='https://i.imgur.com/sJPhtB3.png'),
-                            TextComponent(text='14', size='sm', color='#999999', flex=0),
-                        ]
-                    ),
                     BoxComponent(
                         layout='vertical',
                         margin='lg',
@@ -322,7 +306,14 @@ def sendFlex(event):
                                 layout='baseline',
                                 contents=[
                                     TextComponent(text='營業地址:', color='#aaaaaa', size='sm', flex=2),
-                                    TextComponent(text='台北市信義路14號', color='#666666', size='sm', flex=5)
+                                    TextComponent(text='新北市林口區文化二路一段', color='#666666', size='sm', flex=5)
+                                ],
+                            ),
+							BoxComponent(
+                                layout='baseline',
+                                contents=[
+                                    TextComponent(text='⚘⚘⚘⚘⚘⚘', color='#aaaaaa', size='sm', flex=2),
+                                    TextComponent(text='354號', color='#666666', size='sm', flex=5)
                                 ],
                             ),
                             SeparatorComponent(color='#0000FF'),
@@ -330,7 +321,7 @@ def sendFlex(event):
                                 layout='baseline',
                                 contents=[
                                     TextComponent(text='營業時間:', color='#aaaaaa', size='sm', flex=2),
-                                    TextComponent(text="10:00 - 23:00", color='#666666', size='sm', flex=5),
+                                    TextComponent(text="09:00 - 21:00", color='#666666', size='sm', flex=5),
                                 ],
                             ),
                         ],
@@ -342,12 +333,12 @@ def sendFlex(event):
                             ButtonComponent(
                                 style='primary',
                                 height='sm',
-                                action=URIAction(label='電話聯絡', uri='tel:0987654321'),
+                                action=URIAction(label='電話聯絡', uri='tel:0919273609'),
                             ),
                             ButtonComponent(
                                 style='secondary',
                                 height='sm',
-                                action=URIAction(label='查看網頁', uri="https://www.e-happy.com.tw")
+                                action=URIAction(label='查看網頁', uri="https://www.facebook.com/%E7%B4%AB%E7%9B%92%E5%AD%90%E8%8A%B1%E7%A6%AE%E8%A8%AD%E8%A8%88-193614007383467/")
                             )
                         ]
                     )
@@ -356,11 +347,11 @@ def sendFlex(event):
             footer=BoxComponent(
                 layout='vertical',
                 contents=[
-                    TextComponent(text='copyright@happy studio 2019', color='#888888', size='sm', align='center'),
+                    TextComponent(text='copyright@purpleBox 2020', color='#888888', size='sm', align='center'),
                 ]
             ),
         )
-        message = FlexSendMessage(alt_text="彈性配置範例", contents=bubble)
+        message = FlexSendMessage(alt_text="聯絡資訊", contents=bubble)
         line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))

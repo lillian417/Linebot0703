@@ -17,7 +17,7 @@ def callback(request):
 	if request.method == 'POST':
 		signature = request.META['HTTP_X_LINE_SIGNATURE']
 		body = request.body.decode('utf-8')
-		print(body)
+		# print(body)
 		try:
 			events = parser.parse(body, signature)
 		except InvalidSignatureError:
@@ -28,34 +28,34 @@ def callback(request):
 			if isinstance(event, MessageEvent):
 				if isinstance(event.message, TextMessage):
 					mtext = event.message.text
-					if mtext == '@按鈕樣板':
-					   sendButton(event)
-					elif mtext == '@購買披薩':
-						sendPizza(event)
-					elif mtext == '@圖片地圖':
-						sendImgmap(event)
-					elif mtext == '@日期時間':
-						sendDatetime(event)
-					elif mtext =="@傳送大溪豆乾活動":
-						sendText(event)
-					elif mtext =="@傳送通識活動":
-						sendImage(event)
-					elif mtext =="@傳送石門水庫熱氣球活動":
-						sendText2(event)
-					elif mtext =="@傳送貼圖":
-						sendStick(event)
-					elif mtext =="@金師獎資訊":
-						sendMulti(event)
+					if mtext == '@傳送花藝課程資訊':
+					   sendCarousel(event)
+					# elif mtext == '@購買披薩':
+					# 	sendPizza(event)
+					# elif mtext == '@圖片地圖':
+					# 	sendImgmap(event)
+					# elif mtext == '@日期時間':
+					# 	sendDatetime(event)
+					# elif mtext =="@傳送大溪豆乾活動":
+					# 	sendText(event)
+					# elif mtext =="@傳送通識活動":
+					# 	sendImage(event)
+					# elif mtext =="@傳送石門水庫熱氣球活動":
+					# 	sendText2(event)
+					# elif mtext =="@傳送貼圖":
+					# 	sendStick(event)
+					# elif mtext =="@金師獎資訊":
+					# 	sendMulti(event)
 					elif mtext =="@傳送聯絡資訊":
 						sendFlex(event)
-					elif mtext =="@快速選單":
-						sendQuickreply(event)
-					elif mtext=="@大溪景點":
-						sendCarousel(event)
-					elif mtext == "@大溪名產":
-						sendCarouselImg(event)
+					# elif mtext =="@快速選單":
+					# 	sendQuickreply(event)
+					# elif mtext=="@大溪景點":
+					# 	sendCarousel(event)
+					# elif mtext == "@大溪名產":
+					# 	sendCarouselImg(event)
 					else:
-						output = "RRRR 快去買!!!"
+						output = "抱歉本機器人尚未設置自訂言論!!!"
 						line_bot_api.reply_message(event.reply_token,TextSendMessage(text = output))
 			if isinstance(event, PostbackEvent):  #PostbackTemplateAction觸發此事件
 				backdata = dict(parse_qsl(event.postback.data))  #取得Postback資料
@@ -63,7 +63,8 @@ def callback(request):
 					sendBack_buy(event, backdata)                       
 		return HttpResponse()
 	else:
-		return HttpResponseBadRequest()
+		#return HttpResponseBadRequest()
+		return HttpResponse()
     
 # def callback(request):
 # 	if request.method =='POST':
