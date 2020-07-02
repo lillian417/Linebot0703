@@ -30,30 +30,12 @@ def callback(request):
 					mtext = event.message.text
 					if mtext == '@傳送花藝課程資訊':
 					   sendCarousel(event)
-					# elif mtext == '@購買披薩':
-					# 	sendPizza(event)
-					# elif mtext == '@圖片地圖':
-					# 	sendImgmap(event)
-					# elif mtext == '@日期時間':
-					# 	sendDatetime(event)
-					# elif mtext =="@傳送大溪豆乾活動":
-					# 	sendText(event)
-					# elif mtext =="@傳送通識活動":
-					# 	sendImage(event)
-					# elif mtext =="@傳送石門水庫熱氣球活動":
-					# 	sendText2(event)
-					# elif mtext =="@傳送貼圖":
-					# 	sendStick(event)
-					# elif mtext =="@金師獎資訊":
-					# 	sendMulti(event)
+					elif mtext == '@傳送七夕花禮資訊':
+						sendCarouselImg(event)
+					elif mtext == '@傳送花禮作品':
+						sendCarouselImg2(event)
 					elif mtext =="@傳送聯絡資訊":
 						sendFlex(event)
-					# elif mtext =="@快速選單":
-					# 	sendQuickreply(event)
-					# elif mtext=="@大溪景點":
-					# 	sendCarousel(event)
-					# elif mtext == "@大溪名產":
-					# 	sendCarouselImg(event)
 					else:
 						output = "抱歉本機器人尚未設置自訂言論!!!"
 						line_bot_api.reply_message(event.reply_token,TextSendMessage(text = output))

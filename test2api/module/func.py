@@ -242,37 +242,103 @@ def sendCarousel(event):
 def sendCarouselImg(event):
 	#try:
 		message = TemplateSendMessage(
-			alt_text='圖片轉盤樣板',
+			alt_text='七夕節慶花禮',
 			template=ImageCarouselTemplate(
 				columns=[
 					ImageCarouselColumn(
-						image_url='https://www.alberthsieh.com/wp-content/uploads/flickr/24794130670_d49b2fee3b_b.jpg',
-						action=MessageTemplateAction(
-							label='大溪豆乾',
-							text="想吃！"
+						image_url='https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/67299993_2260768084001372_3451101592084807680_n.jpg?_nc_cat=100&_nc_sid=0debeb&_nc_ohc=vJWl2bkosSYAX-tBBX9&_nc_ht=scontent.ftpe4-2.fna&oh=e16b11102648b089e1c81691ea2fe29d&oe=5F201FFB',
+						action=URITemplateAction(
+								label='情人節花束',
+								uri='https://www.facebook.com/permalink.php?story_fbid=2260769327334581&id=193614007383467'
 						)
 					),
 					ImageCarouselColumn(
-						image_url='https://www.alberthsieh.com/wp-content/uploads/flickr/24462870313_336a20c273_b.jpg',
-						action=MessageTemplateAction(
-							label='月光餅（地瓜餅）',
-							text="想吃！"
+						image_url='https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/67201666_2260771107334403_2385870353156014080_n.jpg?_nc_cat=104&_nc_sid=0debeb&_nc_ohc=3uFtashVnmoAX_3svyt&_nc_ht=scontent.ftpe4-2.fna&oh=a005091f15ab8e0583abf71e46855db1&oe=5F226A57',
+						action=URITemplateAction(
+								label='情人節花束',
+								uri='https://www.facebook.com/permalink.php?story_fbid=2260771784001002&id=193614007383467'
 						)
 					),
 					ImageCarouselColumn(
-						image_url='https://www.alberthsieh.com/wp-content/uploads/flickr/25063404956_2e3254b4c8_b.jpg',
-						action=MessageTemplateAction(
-							label='麥芽花生糖',
-							text="想吃！"
+						image_url='https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/20664043_1406627942748728_8455519672773317811_n.jpg?_nc_cat=104&_nc_sid=8bfeb9&_nc_ohc=DJpgE2e07XEAX_i__OU&_nc_ht=scontent.ftpe4-2.fna&oh=9fce94bd012b9c3933ffcaaad064a68e&oe=5F225B23',
+						action=URITemplateAction(
+								label='情人節花束',
+								uri='https://www.facebook.com/permalink.php?story_fbid=1419633931448129&id=193614007383467'
 						)
 					),
 					ImageCarouselColumn(
-						image_url='https://www.alberthsieh.com/wp-content/uploads/flickr/24971569902_218b62be31_b.jpg',
-						action=MessageTemplateAction(
-							label='原味黃金乳酪球',
-							text="想吃！"
+						image_url='https://scontent.ftpe4-1.fna.fbcdn.net/v/t1.0-9/13880355_1062116740533185_4130157721522038996_n.jpg?_nc_cat=105&_nc_sid=8bfeb9&_nc_ohc=ienoRfsrlhEAX-gPVYk&_nc_ht=scontent.ftpe4-1.fna&oh=2aa34c53e13e74e8269a9117e140c672&oe=5F23F4E8',
+						action=URITemplateAction(
+								label='情人節提籃花',
+								uri='https://www.facebook.com/permalink.php?story_fbid=1062117130533146&id=193614007383467'
+						)
+					),
+					ImageCarouselColumn(
+						image_url='https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/20664043_1406627942748728_8455519672773317811_n.jpg?_nc_cat=104&_nc_sid=8bfeb9&_nc_ohc=DJpgE2e07XEAX_i__OU&_nc_ht=scontent.ftpe4-2.fna&oh=9fce94bd012b9c3933ffcaaad064a68e&oe=5F225B23',
+						action=URITemplateAction(
+								label='情人節花束',
+								uri='https://www.facebook.com/permalink.php?story_fbid=1419633931448129&id=193614007383467'
 						)
 					)
+				]
+			)
+		)
+		line_bot_api.reply_message(event.reply_token,message)
+def sendCarouselImg2(event):
+	#try:
+		message = TemplateSendMessage(
+			alt_text='各式花禮作品',
+			template=ImageCarouselTemplate(
+				columns=[
+					ImageCarouselColumn(
+						image_url='https://i.imgur.com/i8M7sme.jpg',
+						action=URITemplateAction(
+								label='提籃花',
+								uri='https://www.facebook.com/%E7%B4%AB%E7%9B%92%E5%AD%90%E8%8A%B1%E7%A6%AE%E8%A8%AD%E8%A8%88-193614007383467/'
+						)
+					),
+					ImageCarouselColumn(
+						image_url='https://imgur.com/DJ1Buef.jpg',
+						action=URITemplateAction(
+								label='花束',
+								uri='https://www.facebook.com/%E7%B4%AB%E7%9B%92%E5%AD%90%E8%8A%B1%E7%A6%AE%E8%A8%AD%E8%A8%88-193614007383467/'
+						)
+					),
+					ImageCarouselColumn(
+						image_url='https://imgur.com/wGCAsMH.jpg',
+						action=URITemplateAction(
+								label='永生花',
+								uri='https://www.facebook.com/%E7%B4%AB%E7%9B%92%E5%AD%90%E8%8A%B1%E7%A6%AE%E8%A8%AD%E8%A8%88-193614007383467/'
+						)
+					),
+					ImageCarouselColumn(
+						image_url='https://imgur.com/FQaXKug.jpg',
+						action=URITemplateAction(
+								label='蘭花',
+								uri='https://www.facebook.com/%E7%B4%AB%E7%9B%92%E5%AD%90%E8%8A%B1%E7%A6%AE%E8%A8%AD%E8%A8%88-193614007383467/'
+						)
+					),
+					ImageCarouselColumn(
+						image_url='https://imgur.com/ag3ubZN.jpg',
+						action=URITemplateAction(
+								label='提籃花',
+								uri='https://www.facebook.com/%E7%B4%AB%E7%9B%92%E5%AD%90%E8%8A%B1%E7%A6%AE%E8%A8%AD%E8%A8%88-193614007383467/'
+						)
+					),
+					ImageCarouselColumn(
+						image_url='https://imgur.com/5Yro8Ym.jpg',
+						action=URITemplateAction(
+								label='盆花',
+								uri='https://www.facebook.com/%E7%B4%AB%E7%9B%92%E5%AD%90%E8%8A%B1%E7%A6%AE%E8%A8%AD%E8%A8%88-193614007383467/'
+						)
+					),
+					ImageCarouselColumn(
+						image_url='https://i.imgur.com/PquESwg.jpg',
+						action=URITemplateAction(
+								label='提籃花',
+								uri='https://www.facebook.com/%E7%B4%AB%E7%9B%92%E5%AD%90%E8%8A%B1%E7%A6%AE%E8%A8%AD%E8%A8%88-193614007383467/'
+						)
+					),
 				]
 			)
 		)
